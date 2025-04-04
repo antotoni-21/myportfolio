@@ -1,346 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anthony Kiptoo Kipkogei | Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-    <style>
-      /* Global Styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Kiptoo Kipkogei | Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background-color: #f4f4f4;
-        scroll-behavior: smooth;
-      }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
 
-      .container {
-        width: 80%;
-        margin: 0 auto;
-      }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-      h1,
-      h2,
-      h3 {
-        margin-bottom: 10px;
-      }
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
 
-      /* Header Section */
-      .main-header {
-        background-color: #333;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-      }
+    /* Header Section */
+    .main-header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
 
-      .main-header h1 {
-        font-size: 2.5rem;
-      }
+    .main-header h1 {
+      font-size: 2.5rem;
+    }
 
-      .main-header p {
-        font-size: 1.2rem;
-      }
+    .main-header p {
+      font-size: 1.2rem;
+    }
 
-      .location {
-        font-size: 1rem;
-        margin-top: 10px;
-      }
+    .location {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
 
-      .navbar {
-        position: relative;
-      }
+    .navbar {
+      position: relative;
+    }
 
+    .navbar ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .navbar input[type="checkbox"] {
+      display: none;
+    }
+
+    .navbar .menu-icon {
+      display: none;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    .navbar input[type="checkbox"]:checked~ul {
+      display: block;
+    }
+
+    .navbar ul {
+      display: flex;
+    }
+
+    .navbar ul li {
+      margin: 0 15px;
+    }
+
+    .navbar ul li a:hover {
+      color: #00bcd4;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 768px) {
       .navbar ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-      }
-
-      .navbar ul li {
-        margin: 0 15px;
-      }
-
-      .navbar ul li a {
-        color: white;
-        font-size: 1rem;
-        text-transform: uppercase;
-      }
-
-      .navbar input[type="checkbox"] {
         display: none;
-      }
-
-      .navbar .menu-icon {
-        display: none;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
+        flex-direction: column;
         position: absolute;
-        right: 20px;
-        top: 20px;
+        top: 50px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
       }
 
       .navbar input[type="checkbox"]:checked~ul {
-        display: block;
-      }
-
-      .navbar ul {
         display: flex;
       }
 
-      .navbar ul li {
-        margin: 0 15px;
+      .menu-icon {
+        display: block;
       }
+    }
 
-      .navbar ul li a:hover {
-        color: #00bcd4;
-      }
+    /* Section Styling */
+    section {
+      padding: 50px 0;
+    }
 
-      /* Media Queries for Responsive Design */
-      @media (max-width: 768px) {
-        .navbar ul {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 50px;
-          left: 0;
-          background-color: #333;
-          width: 100%;
-        }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-        .navbar input[type="checkbox"]:checked~ul {
-          display: flex;
-        }
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
 
-        .menu-icon {
-          display: block;
-        }
-      }
+    /* Services Section */
+    ol {
+      list-style-type: decimal;
+      margin-left: 20px;
+      font-size: 1.2rem;
+    }
 
-      /* Section Styling */
-      section {
-        padding: 50px 0;
-      }
+    /* Download Resume Button */
+    .download-btn {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
-      section h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
+    .download-btn:hover {
+      background-color: #008c99;
+    }
 
-      section p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-      }
+    /* Footer */
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
 
-      /* Services Section */
-      ol {
-        list-style-type: decimal;
-        margin-left: 20px;
-        font-size: 1.2rem;
-      }
+    /* Social Icons */
+    .social-icons {
+      margin-top: 10px;
+    }
 
-      /* Download Resume Button */
-      .download-btn {
-        background-color: #00bcd4;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
+    .social-icon {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: white;
+      transition: color 0.3s;
+    }
 
-      .download-btn:hover {
-        background-color: #008c99;
-      }
+    .social-icon:hover {
+      color: #00bcd4;
+    }
 
-      /* Footer */
-      .footer {
-        background-color: #333;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-      }
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f4f4f4;
+    }
 
-      /* Social Icons */
-      .social-icons {
-        margin-top: 10px;
-      }
+    body.dark-mode .main-header {
+      background-color: #333;
+    }
 
-      .social-icon {
-        font-size: 1.5rem;
-        margin: 0 10px;
-        color: white;
-        transition: color 0.3s;
-      }
+    body.dark-mode .navbar ul li a {
+      color: #f4f4f4;
+    }
 
-      .social-icon:hover {
-        color: #00bcd4;
-      }
+    body.dark-mode .footer {
+      background-color: #333;
+    }
 
-      /* Dark Mode Styles */
-      body.dark-mode {
-        background-color: #121212;
-        color: #f4f4f4;
-      }
+    body.dark-mode .social-icon {
+      color: #f4f4f4;
+    }
 
-      body.dark-mode .main-header {
-        background-color: #333;
-      }
+    /* Light Mode Styles */
+    body.light-mode {
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-      body.dark-mode .navbar ul li a {
-        color: #f4f4f4;
-      }
+    body.light-mode .main-header {
+      background-color: #f4f4f4;
+    }
 
-      body.dark-mode .footer {
-        background-color: #333;
-      }
+    body.light-mode .navbar ul li a {
+      color: #333;
+    }
 
-      body.dark-mode .social-icon {
-        color: #f4f4f4;
-      }
+    body.light-mode .footer {
+      background-color: #f4f4f4;
+    }
 
-      /* Light Mode Styles */
-      body.light-mode {
-        background-color: #f4f4f4;
-        color: #333;
-      }
+    /* Help Form Styling */
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 800px;
+      margin: 20px auto;
+    }
 
-      body.light-mode .main-header {
-        background-color: #f4f4f4;
-      }
+    .form-container h2 {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+    }
 
-      body.light-mode .navbar ul li a {
-        color: #333;
-      }
+    .form-container label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      color: #555;
+    }
 
-      body.light-mode .footer {
-        background-color: #f4f4f4;
-      }
-    </style>
-  </head>
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="tel"],
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
 
-  <body>
-    <header class="main-header">
-      <div class="container">
-        <h1>Anthony Kiptoo Kipkogei</h1>
-        <p>IT Specialist & Professional Graphic Designer</p>
-        <p class="location">Nairobi, Kenya</p>
-        <nav class="navbar">
-          <input type="checkbox" id="toggle-menu" class="toggle-menu" />
-          <label for="toggle-menu" class="menu-icon">&#9776;</label>
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#download-resume">Download Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="mode-toggle" id="mode-toggle">
-          <i class="fas fa-sun"></i> / <i class="fas fa-moon"></i>
-        </button>
-      </div>
-    </header>
+    .form-container textarea {
+      resize: vertical;
+    }
 
-    <section class="about" id="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>
-          I’m a dedicated IT Specialist and Graphic Designer, passionate about
-          blending technology with creativity...
-        </p>
-      </div>
-    </section>
+    .form-container button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      width: 100%;
+    }
 
-    <section class="services" id="services">
-      <div class="container">
-        <h2>Services</h2>
-        <ol>
-          <li>Logo Design</li>
-          <li>Website Design</li>
-          <li>Poster Creation</li>
-          <li>Invitation Cards</li>
-          <li>Business Cards</li>
-        </ol>
-      </div>
-    </section>
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
 
-    <section class="projects" id="projects">
-      <div class="container">
-        <h2>Featured Project</h2>
-        <h3>Home Voyager Automation/System</h3>
-        <p>An ongoing smart home automation project...</p>
-      </div>
-    </section>
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1>Anthony Kiptoo Kipkogei</h1>
+      <p>IT Specialist & Professional Graphic Designer</p>
+      <p class="location">Nairobi, Kenya</p>
+      <nav class="navbar">
+        <input type="checkbox" id="toggle-menu" class="toggle-menu" />
+        <label for="toggle-menu" class="menu-icon">&#9776;</label>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#download-resume">Download Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Download Resume Section -->
-    <section class="download-resume" id="download-resume">
-      <div class="container">
-        <h2>Download My Resume</h2>
-        <p>Click the button below to download my resume with my permission.</p>
-        <a href="https://drive.google.com/file/d/16ISf1YogDYLKW3TNkWHU7DPaPblmDP4f/view?usp=drive_link" target="_blank">
-          <button class="download-btn">Download Resume</button>
-        </a>
-      </div>
-    </section>
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I’m a dedicated IT Specialist and Graphic Designer, passionate about
+        blending technology with creativity...
+      </p>
+    </div>
+  </section>
 
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:anthonykiptoo19@gmail.com">anthonykiptoo19@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/antotoni-21" target="_blank">github.com/antotoni-21</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/anthony-kiptoo-03b7b8270/" target="_blank">linkedin.com/in/anthony-kiptoo</a></p>
-      </div>
-    </section>
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <ol>
+        <li>Logo Design</li>
+        <li>Website Design</li>
+        <li>Poster Creation</li>
+        <li>Invitation Cards</li>
+        <li>Business Cards</li>
+      </ol>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <p>&copy; 2025 Anthony Kiptoo Kipkogei. All Rights Reserved.</p>
-      <div class="social-icons">
-        <a href="https://github.com/antotoni-21" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/anthony-kiptoo-03b7b8270/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:anthonykiptoo19@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-      </div>
-    </footer>
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2>Featured Project</h2>
+      <h3>Home Voyager Automation/System</h3>
+      <p>An ongoing smart home automation project...</p>
+    </div>
+  </section>
 
-    <script>
-      // Dark/Light mode toggle
-      const modeToggleBtn = document.getElementById("mode-toggle");
-      modeToggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-      });
+  <!-- Download Resume Section -->
+  <section class="download-resume" id="download-resume">
+    <div class="container">
+      <h2>Download My Resume</h2>
+      <p>Click the button below to download my resume with my permission.</p>
+      <a href="https://drive.google.com/file/d/16ISf1YogDYLKW3TNkWHU7DPaPblmDP4f/view?usp=drive_link" target="_blank">
+        <button class="download-btn">Download Resume</button>
+      </a>
+    </div>
+  </section>
 
-      // MutationObserver to replace deprecated DOM events
-      const observer = new MutationObserver((mutationsList, observer) => {
-        for (const mutation of mutationsList) {
-          if (mutation.type === "childList") {
-            console.log("A child node has been added or removed.");
-          } else if (mutation.type === "characterData") {
-            console.log("Character data has been modified.");
-          }
-        }
-      });
+  <!-- Contact Details Section -->
+  <section class="contact-details">
+    <div class="container">
+      <h2>Contact Details</h2>
+      <p><strong>Phone Number:</strong> 0704661585</p>
+      <p><strong>Email:</strong> <a href="mailto:anthonykiptoo19@gmail.com">anthonykiptoo19@gmail.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/antotoni-21" target="_blank">https://github.com/antotoni-21</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anthony-kiptoo-03b7b8270/" target="_blank">https://www.linkedin.com/in/anthony-kiptoo-03b7b8270/</a></p>
+    </div>
+  </section>
 
-      const config = {
-        childList: true,
-        subtree: true,
-        characterData: true
-      };
+  <!-- Customer Help Form Section -->
+  <section id="contact" class="container">
+    <h2>Customer Help Form</h2>
+    <div class="form-container">
+      <form action="https://formspree.io/f/xrbpyryk" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-      const targetNode = document.body;
-      observer.observe(targetNode, config);
-    </script>
-  </body>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+
+        <label for="issue">Type of Issue:</label>
+        <select id="issue" name="issue" required>
+          <option value="technical">Technical Support</option>
+          <option value="product">Product/Service Issue</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="description">Describe the Issue:</label>
+        <textarea id="description" name="description" rows="4" placeholder="Describe your issue..." required></textarea>
+
+        <label for="contactMethod">Preferred Contact Method:</label>
+        <select id="contactMethod" name="contactMethod" required>
+          <option value="email">Email</option>
+          <option value="phone">Phone</option>
+        </select>
+
+        <button type="submit">Submit Help Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Anthony Kiptoo Kipkogei. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="https://github.com/antotoni-21" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/anthony-kiptoo-03b7b8270/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:anthonykiptoo19@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Dark/Light mode toggle
+    const modeToggleBtn = document.getElementById("mode-toggle");
+    modeToggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("light-mode");
+    });
+  </script>
+</body>
 </html>
